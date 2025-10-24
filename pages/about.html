@@ -1,39 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>About – The Terry Family</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../vendor/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — The Terry Family</title>
+  <link rel="stylesheet" href="vendor/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC" />
   <style>
-    body {font-family: "Amatic SC", sans-serif;}
-    h1, h2 {text-align: center;}
+    body, html {font-family:"Amatic SC", sans-serif;}
+    .hero {background: url('https://picsum.photos/1400/500?image=1005') center/cover; height:38vh; color:#fff;}
+    .bio {line-height:1.6;}
   </style>
 </head>
 <body>
 
-<header class="w3-container w3-center w3-padding-32">
-  <h1 class="w3-xxlarge"><b>THE TERRY FAMILY</b></h1>
-  <div class="w3-bar w3-border-top w3-border-bottom w3-center">
-    <a href="../index.html" class="w3-bar-item w3-button">HOME</a>
-    <a href="about.html" class="w3-bar-item w3-button w3-black">ABOUT</a>
-    <a href="contact.html" class="w3-bar-item w3-button">CONTACT</a>
+  <!-- Shared header/nav (replicated for static pages) -->
+  <div class="w3-bar w3-white w3-card">
+    <a href="index.html" class="w3-bar-item w3-button"><b>THE TERRY FAMILY</b></a>
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button">Home</a>
+      <a href="about.html" class="w3-bar-item w3-button">About</a>
+      <a href="gallery.html" class="w3-bar-item w3-button">Gallery</a>
+      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+    </div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" onclick="toggleMenu()">☰</a>
   </div>
-</header>
 
-<section class="w3-container w3-padding-64">
-  <h2>ABOUT OUR FAMILY</h2>
-  <p class="w3-center w3-large">
-    We’re the Terry Family — a fun, adventurous bunch who love to travel, explore new ideas, 
-    and spend quality time together. Our website shares our stories, family updates, and plans 
-    for where life will take us next.
-  </p>
-</section>
+  <div id="mobileMenu" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-card">
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+    <a href="about.html" class="w3-bar-item w3-button">About</a>
+    <a href="gallery.html" class="w3-bar-item w3-button">Gallery</a>
+    <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+  </div>
 
-<footer class="w3-center w3-padding-32 w3-dark-grey">
-  <p>© 2025 The Terry Family | Privacy Policy | Links</p>
-</footer>
+  <!-- Hero -->
+  <section class="hero w3-display-container w3-center">
+    <div class="w3-display-middle">
+      <h1 class="w3-xxxlarge">About The Terrys</h1>
+    </div>
+  </section>
+
+  <main class="w3-container w3-padding-48">
+    <div class="w3-row-padding">
+      <div class="w3-col s12 m6">
+        <div class="w3-card w3-padding">
+          <h2>Our Story</h2>
+          <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nisi ut lectus bibendum faucibus. Fusce vitae ligula vitae arcu dapibus tristique. Integer non risus at nisl volutpat suscipit. Maecenas at eros sit amet urna gravida vulputate.</p>
+          <h3>Interests & Hobbies</h3>
+          <ul>
+            <li>Travel & Road Trips</li>
+            <li>Cooking family recipes</li>
+            <li>Outdoor adventures</li>
+            <li>DIY home projects</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="w3-col s12 m6">
+        <div class="w3-card w3-padding">
+          <h2>Family Members</h2>
+          <div class="w3-row-padding">
+            <div class="w3-col s4">
+              <img src="https://picsum.photos/200/200?image=1005" alt="Member" style="width:100%" />
+            </div>
+            <div class="w3-col s8">
+              <h3>Chris Terry</h3>
+              <p>Short bio — Lorem ipsum dolor sit amet, consectetur.</p>
+              <h3>Nodin Terry</h3>
+              <p>Short bio — Lorem ipsum dolor sit amet, consectetur.</p>
+            </div>
+          </div>
+
+          <h3>Testimonials</h3>
+          <blockquote>Lorem ipsum dolor sit amet — family member or friend.</blockquote>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="w3-center w3-light-grey w3-padding-24">
+    <p>© 2025 The Terry Family | <a href="contact.html">Contact</a></p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      var x = document.getElementById("mobileMenu");
+      if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; }
+      else { x.className = x.className.replace(" w3-show", ""); }
+    }
+  </script>
+</body>
+</html>
+
 
 </body>
 </html>
