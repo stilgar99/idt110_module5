@@ -1,63 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>The Terry Family</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="vendor/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Terry Family — Home</title>
+
+  <!-- W3.CSS (local vendor as you already have) -->
+  <link rel="stylesheet" href="vendor/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC" />
   <style>
-    body, html {height: 100%; font-family: "Amatic SC", sans-serif}
+    body, html {height: 100%; font-family: "Amatic SC", sans-serif;}
     .hero-image {
-      background-image: url('assets/graphics/hero.jpg'); /* Replace with your own image */
+      background-image: url('https://picsum.photos/1600/900?image=1050');
       background-size: cover;
       background-position: center;
-      height: 80vh;
+      height: 70vh;
       color: white;
     }
-    .w3-bar-item {font-size: 20px;}
-    h1, h2 {text-align: center;}
+    .w3-bar-item {font-size: 18px;}
+    .site-title {letter-spacing: 2px;}
+    .intro-card {min-height: 140px;}
+    footer a {color:inherit; text-decoration:underline;}
   </style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32">
-  <h1 class="w3-xxlarge"><b>THE TERRY FAMILY</b></h1>
-  <div class="w3-bar w3-border-top w3-border-bottom w3-center">
-    <a href="#" class="w3-bar-item w3-button">FUN STUFF</a>
-    <a href="#" class="w3-bar-item w3-button">HOME</a>
-    <a href="#" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="#" class="w3-bar-item w3-button">CONTACT</a>
-  </div>
-</header>
+  <!-- Header / Nav -->
+  <header class="w3-top">
+    <div class="w3-bar w3-white w3-card">
+      <a href="index.html" class="w3-bar-item w3-button site-title"><b>THE TERRY FAMILY</b></a>
 
-<!-- Hero Section -->
-<section class="hero-image w3-display-container w3-center">
-  <div class="w3-display-middle">
-    <h2 class="w3-xxlarge w3-text-white">Welcome to Our Website!</h2>
-    <p>
-      <a href="#learn" class="w3-button w3-white w3-padding-large">Learn More</a>
-      <a href="#contact" class="w3-button w3-black w3-padding-large">Contact Us</a>
-    </p>
-  </div>
-</section>
+      <!-- Desktop links -->
+      <div class="w3-right w3-hide-small">
+        <a href="index.html" class="w3-bar-item w3-button">Home</a>
+        <a href="about.html" class="w3-bar-item w3-button">About</a>
+        <a href="gallery.html" class="w3-bar-item w3-button">Gallery</a>
+        <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+        <a href="sitemap.html" class="w3-bar-item w3-button">Sitemap</a>
+      </div>
 
-<!-- Main Content -->
-<div class="w3-container w3-padding-64" id="learn">
-  <h2>WHERE WE HAVE BEEN</h2>
-  <p class="w3-center">Stories, photos, and memories from our family adventures.</p>
-</div>
+      <!-- Hamburger (small screens) -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="toggleMenu()">☰</a>
+    </div>
 
-<div class="w3-container w3-light-grey w3-padding-64">
-  <h2>WHERE WE ARE GOING</h2>
-  <p class="w3-center">Plans for our next trips and family goals for the future.</p>
-</div>
+    <!-- Hidden mobile menu -->
+    <div id="mobileMenu" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-card">
+      <a href="index.html" class="w3-bar-item w3-button">Home</a>
+      <a href="about.html" class="w3-bar-item w3-button">About</a>
+      <a href="gallery.html" class="w3-bar-item w3-button">Gallery</a>
+      <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+      <a href="sitemap.html" class="w3-bar-item w3-button">Sitemap</a>
+    </div>
+  </header>
 
-<!-- Footer -->
-<footer class="w3-center w3-padding-32 w3-dark-grey">
-  <p>© 2025 The Terry Family | Privacy Policy | Links</p>
-</footer>
+  <!-- Hero -->
+  <section class="hero-image w3-display-container w3-center">
+    <div class="w3-display-middle w3-padding-large w3-white-opacity">
+      <h1 class="w3-xxxlarge w3-text-white">Welcome to The Terry Family</h1>
+      <p class="w3-large w3-text-white">Stories, photos and plans — all in one place.</p>
+      <p>
+        <a href="about.html" class="w3-button w3-white w3-padding-large">Learn About Us</a>
+        <a href="gallery.html" class="w3-button w3-black w3-padding-large">View Gallery</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Main grid intro -->
+  <main class="w3-container w3-padding-64">
+    <div class="w3-row-padding">
+      <div class="w3-col s12 m6 l3">
+        <div class="w3-card w3-padding intro-card">
+          <h3>Family Projects</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+          <p><a href="about.html" class="w3-button w3-small w3-border">Read More</a></p>
+        </div>
+      </div>
+
+      <div class="w3-col s12 m6 l3">
+        <div class="w3-card w3-padding intro-card">
+          <h3>Recent Trips</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel.</p>
+          <p><a href="gallery.html" class="w3-button w3-small w3-border">View Photos</a></p>
+        </div>
+      </div>
+
+      <div class="w3-col s12 m6 l3">
+        <div class="w3-card w3-padding intro-card">
+          <h3>Family Events</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat.</p>
+          <p><a href="contact.html#events" class="w3-button w3-small w3-border">Sign Up</a></p>
+        </div>
+      </div>
+
+      <div class="w3-col s12 m6 l3">
+        <div class="w3-card w3-padding intro-card">
+          <h3>Resources</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante.</p>
+          <p><a href="sitemap.html" class="w3-button w3-small w3-border">Sitemap</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-padding-24 w3-light-grey">
+    <p>© 2025 The Terry Family — <a href="privacy-policy.html">Privacy Policy</a> | <a href="contact.html">Contact</a></p>
+    <p>Follow: <a href="https://twitter.com/example" target="_blank">Twitter</a> | <a href="https://www.linkedin.com/in/example" target="_blank">LinkedIn</a></p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      var x = document.getElementById("mobileMenu");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
 
 </body>
 </html>
