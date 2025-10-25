@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sitemap — The Terry Family</title>
+  <link rel="stylesheet" href="vendor/w3.css" />
+  <style>body{font-family:Arial,Helvetica,sans-serif}</style>
+</head>
+<body class="w3-container w3-padding-48">
+  <h1>Sitemap</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="privacy-policy.html">Privacy Policy</a> (placeholder)</li>
+    <li><a href="terms-of-service.html">Terms of Service</a> (placeholder)</li>
+  </ul>
+  <p>Social: <a href="https://twitter.com/example">Twitter</a> | <a href="https://linkedin.com/in/example">LinkedIn</a></p>
+</body>
+</html>
