@@ -1,48 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact – The Terry Family</title>
+  <title>Contact | The Terry Family</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../vendor/w3.css">
+  <link rel="stylesheet" href="vendor/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
   <style>
-    body {font-family: "Amatic SC", sans-serif;}
+    body, html {font-family: "Amatic SC", sans-serif;}
     h1, h2 {text-align: center;}
-    input, textarea {width: 100%; padding: 10px; margin: 5px 0;}
+    .w3-input {font-family: sans-serif;}
   </style>
 </head>
 <body>
 
+<!-- Header -->
 <header class="w3-container w3-center w3-padding-32">
-  <h1 class="w3-xxlarge"><b>THE TERRY FAMILY</b></h1>
+  <h1 class="w3-xxlarge"><b>Contact The Terry Family</b></h1>
   <div class="w3-bar w3-border-top w3-border-bottom w3-center">
-    <a href="../index.html" class="w3-bar-item w3-button">HOME</a>
+    <a href="index.html" class="w3-bar-item w3-button">HOME</a>
     <a href="about.html" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="contact.html" class="w3-bar-item w3-button w3-black">CONTACT</a>
+    <a href="gallery.html" class="w3-bar-item w3-button">GALLERY</a>
+    <a href="contact.html" class="w3-bar-item w3-button w3-green">CONTACT</a>
   </div>
 </header>
 
-<section class="w3-container w3-padding-64">
-  <h2>CONTACT US</h2>
-  <p class="w3-center w3-large">We’d love to hear from you! Send us a message below.</p>
-
-  <form class="w3-container w3-card w3-light-grey w3-padding" style="max-width:600px; margin:auto;">
-    <label><b>Name</b></label>
-    <input class="w3-input" type="text" name="name" placeholder="Your name">
-
-    <label><b>Email</b></label>
-    <input class="w3-input" type="email" name="email" placeholder="Your email">
-
-    <label><b>Message</b></label>
-    <textarea class="w3-input" name="message" rows="5" placeholder="Your message"></textarea>
-
-    <button class="w3-button w3-black w3-margin-top" type="submit">Send Message</button>
+<!-- Short Form -->
+<section class="w3-container w3-light-grey w3-padding-64">
+  <h2>Stay in Touch</h2>
+  <p class="w3-center">Sign up for our newsletter or ask a quick question!</p>
+  <form class="w3-container w3-center" style="max-width:500px; margin:auto;">
+    <input class="w3-input w3-border w3-margin-bottom" type="email" placeholder="Your email address" required>
+    <button class="w3-button w3-green w3-padding-large" type="submit">Subscribe</button>
   </form>
 </section>
 
+<!-- Long Form -->
+<section class="w3-container w3-padding-64">
+  <h2>Contact Us</h2>
+  <p class="w3-center">We’d love to hear from you! Please fill out the form below.</p>
+  <form class="w3-container w3-card-4 w3-padding w3-white" style="max-width:600px; margin:auto;">
+    <label class="w3-text-grey">Name</label>
+    <input class="w3-input w3-border" type="text" name="name" required>
+
+    <label class="w3-text-grey">Email</label>
+    <input class="w3-input w3-border" type="email" name="email" required>
+
+    <label class="w3-text-grey">Subject</label>
+    <input class="w3-input w3-border" type="text" name="subject">
+
+    <label class="w3-text-grey">Message</label>
+    <textarea class="w3-input w3-border" name="message" rows="5" required></textarea>
+
+    <button class="w3-button w3-green w3-margin-top w3-padding-large" type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Footer -->
 <footer class="w3-center w3-padding-32 w3-dark-grey">
-  <p>© 2025 The Terry Family | Privacy Policy | Links</p>
+  <p>© 2025 The Terry Family | <a href="privacy.html" class="w3-text-white">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
+
 </footer>
 
 </body>
