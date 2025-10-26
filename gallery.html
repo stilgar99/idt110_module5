@@ -4,23 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Gallery — The Terry Family</title>
+
+  <!-- W3.CSS (local vendor) -->
   <link rel="stylesheet" href="vendor/w3.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC" />
   <style>
-    body,html{font-family:"Amatic SC",sans-serif}
-    .thumb {cursor:pointer}
-    .gallery-grid img {width:100%; height:200px; object-fit:cover;}
+    body,html {font-family:"Amatic SC",sans-serif; margin:0; padding:0;}
+    .page-title {text-align:center; padding:20px 0;}
+    .thumb img {width:100%; height:180px; object-fit:cover; display:block; cursor:pointer;}
+    /* Modal image sizing */
+    .w3-modal-content { max-width:90%; max-height:90vh; margin:auto; display:block; }
+    .modal-caption { color:#fff; text-align:center; padding:12px 0 24px 0; font-size:1.05rem; }
+    /* tight grid spacing */
+    .w3-row-padding > .w3-col { padding:8px; }
   </style>
 </head>
 <body>
 
-  <!-- Nav -->
+  <!-- Navigation (consistent with other pages) -->
   <div class="w3-bar w3-white w3-card">
     <a href="index.html" class="w3-bar-item w3-button"><b>THE TERRY FAMILY</b></a>
     <div class="w3-right w3-hide-small">
       <a href="index.html" class="w3-bar-item w3-button">Home</a>
       <a href="about.html" class="w3-bar-item w3-button">About</a>
-      <a href="gallery.html" class="w3-bar-item w3-button">Gallery</a>
+      <a href="gallery.html" class="w3-bar-item w3-button w3-light-grey">Gallery</a>
       <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
     </div>
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large" onclick="toggleMenu()">☰</a>
@@ -33,72 +40,103 @@
     <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
   </div>
 
-  <main class="w3-container w3-padding-48">
-    <h2 class="w3-center">Gallery</h2>
-    <p class="w3-center">A mix of placeholder photos from Lorem Picsum — click to view slideshow.</p>
+  <main class="w3-container">
+    <h2 class="page-title">Gallery</h2>
+    <p class="w3-center">Click any image to view full-size. Images are placeholders from Lorem Picsum.</p>
 
-    <!-- Slideshow (manual) -->
-    <div class="w3-content w3-display-container" style="max-width:900px;margin:0 auto">
-      <img class="slides w3-animate-fading" src="https://picsum.photos/900/500?image=1015" style="width:100%">
-      <img class="slides w3-animate-fading" src="https://picsum.photos/900/500?image=1016" style="width:100%">
-      <img class="slides w3-animate-fading" src="https://picsum.photos/900/500?image=1018" style="width:100%">
-      <img class="slides w3-animate-fading" src="https://picsum.photos/900/500?image=1020" style="width:100%">
-      <img class="slides w3-animate-fading" src="https://picsum.photos/900/500?image=1027" style="width:100%">
-      <div class="w3-center w3-padding-8 w3-large">
-        <button class="w3-button w3-circle" onclick="plusSlides(-1)">❮</button>
-        <button class="w3-button w3-circle" onclick="plusSlides(1)">❯</button>
+    <!-- Thumbnail grid: s12 m6 l4 layout (6 thumbnails) -->
+    <div class="w3-row-padding w3-margin-top">
+      <div class="w3-col s12 m6 l4 thumb">
+        <img src="https://picsum.photos/800/600?image=1015" alt="Coastal sunset" onclick="openModal(this)" />
       </div>
-    </div>
 
-    <!-- Thumbnails grid -->
-    <div class="w3-row-padding w3-margin-top gallery-grid">
-      <!-- 6 placeholder thumbnails (responsive cols: s12 m6 l4) -->
-      <div class="w3-col s12 m6 l4 w3-margin-bottom">
-        <img src="https://picsum.photos/600/400?image=1015" alt="photo1" class="thumb" onclick="currentSlide(1)">
+      <div class="w3-col s12 m6 l4 thumb">
+        <img src="https://picsum.photos/800/600?image=1016" alt="Forest trail" onclick="openModal(this)" />
       </div>
-      <div class="w3-col s12 m6 l4 w3-margin-bottom">
-        <img src="https://picsum.photos/600/400?image=1016" alt="photo2" class="thumb" onclick="currentSlide(2)">
+
+      <div class="w3-col s12 m6 l4 thumb">
+        <img src="https://picsum.photos/800/600?image=1018" alt="Mountain lake" onclick="openModal(this)" />
       </div>
-      <div class="w3-col s12 m6 l4 w3-margin-bottom">
-        <img src="https://picsum.photos/600/400?image=1018" alt="photo3" class="thumb" onclick="currentSlide(3)">
+
+      <div class="w3-col s12 m6 l4 thumb">
+        <img src="https://picsum.photos/800/600?image=1020" alt="Old town street" onclick="openModal(this)" />
       </div>
-      <div class="w3-col s12 m6 l4 w3-margin-bottom">
-        <img src="https://picsum.photos/600/400?image=1020" alt="photo4" class="thumb" onclick="currentSlide(4)">
+
+      <div class="w3-col s12 m6 l4 thumb">
+        <img src="https://picsum.photos/800/600?image=1027" alt="Rolling hills" onclick="openModal(this)" />
       </div>
-      <div class="w3-col s12 m6 l4 w3-margin-bottom">
-        <img src="https://picsum.photos/600/400?image=1027" alt="photo5" class="thumb" onclick="currentSlide(5)">
+
+      <div class="w3-col s12 m6 l4 thumb">
+        <img src="https://picsum.photos/800/600?image=1032" alt="Quiet harbor" onclick="openModal(this)" />
       </div>
-      <div class="w3-col s12 m6 l4 w3-margin-bottom">
-        <img src="https://picsum.photos/600/400?image=1032" alt="photo6" class="thumb" onclick="currentSlide(6)">
+
+      <!-- Add two more thumbnails if you want 8 -->
+      <div class="w3-col s12 m6 l4 thumb">
+        <img src="https://picsum.photos/800/600?image=1035" alt="Desert road" onclick="openModal(this)" />
+      </div>
+
+      <div class="w3-col s12 m6 l4 thumb">
+        <img src="https://picsum.photos/800/600?image=1040" alt="City skyline" onclick="openModal(this)" />
       </div>
     </div>
   </main>
 
+  <!-- Modal / Lightbox -->
+  <div id="modal01" class="w3-modal" style="display:none;" onclick="closeModal()">
+    <span class="w3-button w3-display-topright w3-xlarge w3-text-white" onclick="closeModal(event)">×</span>
+
+    <!-- container to center content vertically -->
+    <div class="w3-modal-content w3-animate-zoom" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
+      <img id="modalImg" src="" alt="" class="w3-modal-content" style="display:block; margin:0 auto;">
+      <div id="modalCaption" class="modal-caption"></div>
+    </div>
+  </div>
+
   <footer class="w3-center w3-light-grey w3-padding-24">© 2025 The Terry Family</footer>
 
   <script>
-    // Mobile menu toggle (shared)
+    // Mobile menu toggle
     function toggleMenu() {
       var x = document.getElementById("mobileMenu");
-      if (x.className.indexOf("w3-show") == -1) { x.className += " w3-show"; }
+      if (x.className.indexOf("w3-show") === -1) { x.className += " w3-show"; }
       else { x.className = x.className.replace(" w3-show", ""); }
     }
 
-    // Slideshow logic
-    var slideIndex = 1;
-    showSlides(slideIndex);
+    // Open modal: set src and caption, show modal (with background fade from w3-modal)
+    function openModal(imgElement) {
+      var modal = document.getElementById("modal01");
+      var modalImg = document.getElementById("modalImg");
+      var caption = document.getElementById("modalCaption");
 
-    function plusSlides(n) { showSlides(slideIndex += n); }
-    function currentSlide(n) { showSlides(slideIndex = n); }
+      modal.style.display = "block";
+      modalImg.src = imgElement.src.replace('/800/600', '/1200/900'); // attempt larger size from Picsum
+      modalImg.alt = imgElement.alt || "";
+      caption.textContent = imgElement.alt || "";
 
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("slides");
-      if (n > slides.length) { slideIndex = 1; }
-      if (n < 1) { slideIndex = slides.length; }
-      for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-      slides[slideIndex-1].style.display = "block";
+      // prevent body scroll while modal is open
+      document.body.style.overflow = "hidden";
     }
+
+    // Close modal: hide and clear src
+    function closeModal(evt) {
+      // if called from the × button, it receives the click event; stop propagation to avoid double-handling
+      if (evt) evt.stopPropagation();
+
+      var modal = document.getElementById("modal01");
+      var modalImg = document.getElementById("modalImg");
+      modal.style.display = "none";
+      modalImg.src = "";
+      document.body.style.overflow = ""; // restore scroll
+    }
+
+    // Improve accessibility: close modal on ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        var modal = document.getElementById("modal01");
+        if (modal.style.display === "block") closeModal();
+      }
+    });
   </script>
 </body>
 </html>
+
